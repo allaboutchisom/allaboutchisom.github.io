@@ -48,18 +48,6 @@ function createHeart(){
 }
 
 setInterval(createHeart,300);
-const text = "You are not just special… you are unforgettable 💜";
-let i = 0;
-
-function typeWriter(){
-    if(i < text.length){
-        document.getElementById("typeText").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 80);
-    }
-}
-
-typeWriter();
 window.addEventListener("load", ()=>{
 
     setTimeout(()=>{

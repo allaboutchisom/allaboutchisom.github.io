@@ -213,5 +213,29 @@ video{
         opacity:1;
     }
 }
+.big-heart{
+    font-size:6rem;
+    text-align:center;
+    margin:60px 0 20px;
+    animation:pulseHeart 1.5s infinite ease-in-out;
+    color:#d6a4ff;
+    text-shadow:
+        0 0 10px #b57aff,
+        0 0 20px #b57aff,
+        0 0 40px #b57aff;
+}
+
+/* heartbeat animation */
+@keyframes pulseHeart{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.2);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
 
 /* optional fade (handled by JS now, not CSS) */

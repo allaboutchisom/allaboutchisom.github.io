@@ -1,3 +1,4 @@
+/* RESET */
 *{
     margin:0;
     padding:0;
@@ -5,13 +6,32 @@
     font-family:Arial, sans-serif;
 }
 
+/* BODY */
 body{
     background:linear-gradient(to bottom,#2b1055,#7597de);
     color:white;
     overflow-x:hidden;
     text-align:center;
+
+    /* IMPORTANT: prevents flash */
+    visibility:hidden;
+    animation:showBody 0.3s forwards;
+    animation-delay:0.2s;
 }
 
+/* SHOW BODY SMOOTHLY */
+@keyframes showBody{
+    to{
+        visibility:visible;
+    }
+}
+
+/* 🔴 CRITICAL FIX: hide main content before JS runs */
+#mainContent{
+    display:none;
+}
+
+/* HERO */
 .hero{
     padding:100px 20px;
 }
@@ -26,6 +46,7 @@ body{
     font-weight:300;
 }
 
+/* LOVE LETTER */
 .love-letter{
     max-width:800px;
     margin:auto;
@@ -35,11 +56,7 @@ body{
     border-radius:20px;
 }
 
-#countdown{
-    font-size:2rem;
-    margin-top:30px;
-}
-
+/* BUTTON */
 button{
     margin-top:30px;
     padding:15px 30px;
@@ -51,15 +68,18 @@ button{
     font-size:1rem;
 }
 
+/* HIDDEN TEXT */
 .hidden{
     display:none;
 }
 
+/* SECRET MESSAGE */
 #secretMessage{
     margin-top:20px;
     font-size:1.1rem;
 }
 
+/* GALLERY */
 .gallery{
     padding:80px 20px;
 }
@@ -86,6 +106,7 @@ button{
     margin-top:10px;
 }
 
+/* VIDEO SECTION */
 .video-section{
     padding:80px 20px;
 }
@@ -96,6 +117,7 @@ video{
     border-radius:20px;
 }
 
+/* HEARTS */
 .heart{
     position:fixed;
     top:-10px;
@@ -107,7 +129,10 @@ video{
     to{
         transform:translateY(110vh);
     }
-}.birthday-message{
+}
+
+/* BIRTHDAY MESSAGE */
+.birthday-message{
     margin-top:30px;
     padding:20px;
     background:rgba(255,255,255,0.1);
@@ -120,7 +145,10 @@ video{
 
 .birthday-message h2{
     margin-bottom:10px;
-}.typing-text{
+}
+
+/* TYPING TEXT */
+.typing-text{
     font-size:1.3rem;
     margin-top:25px;
     color:white;
@@ -131,7 +159,10 @@ video{
     margin-right:auto;
     white-space:nowrap;
     overflow:hidden;
-}.glow-text{
+}
+
+/* GLOW TEXT */
+.glow-text{
     margin-top:25px;
     font-size:1.3rem;
     text-align:center;
@@ -147,6 +178,8 @@ video{
         text-shadow: 0 0 10px #ffffff, 0 0 20px #d6a4ff, 0 0 30px #b57aff;
     }
 }
+
+/* NETFLIX INTRO */
 #netflixIntro{
     position:fixed;
     width:100%;
@@ -169,21 +202,15 @@ video{
     text-shadow:0 0 20px #c084fc;
 }
 
-#mainContent{
-    display:none;
-}
-
+/* ANIMATIONS */
 @keyframes zoomText{
-
     0%{
         transform:scale(0.5);
         opacity:0;
     }
-
     50%{
         opacity:1;
     }
-
     100%{
         transform:scale(1.1);
         opacity:1;
@@ -191,11 +218,9 @@ video{
 }
 
 @keyframes fadeOut{
-
     0%,80%{
         opacity:1;
     }
-
     100%{
         opacity:0;
         visibility:hidden;

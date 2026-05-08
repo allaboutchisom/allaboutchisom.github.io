@@ -12,21 +12,9 @@ body{
     color:white;
     overflow-x:hidden;
     text-align:center;
-
-    /* IMPORTANT: prevents flash */
-    visibility:hidden;
-    animation:showBody 0.3s forwards;
-    animation-delay:0.2s;
 }
 
-/* SHOW BODY SMOOTHLY */
-@keyframes showBody{
-    to{
-        visibility:visible;
-    }
-}
-
-/* 🔴 CRITICAL FIX: hide main content before JS runs */
+/* 🔴 CRITICAL FIX: hide main content before JS shows it */
 #mainContent{
     display:none;
 }
@@ -68,7 +56,7 @@ button{
     font-size:1rem;
 }
 
-/* HIDDEN TEXT */
+/* HIDDEN */
 .hidden{
     display:none;
 }
@@ -106,7 +94,7 @@ button{
     margin-top:10px;
 }
 
-/* VIDEO SECTION */
+/* VIDEO */
 .video-section{
     padding:80px 20px;
 }
@@ -189,7 +177,6 @@ video{
     justify-content:center;
     align-items:center;
     z-index:99999;
-    animation:fadeOut 4s forwards;
 }
 
 .netflix-text{
@@ -217,12 +204,4 @@ video{
     }
 }
 
-@keyframes fadeOut{
-    0%,80%{
-        opacity:1;
-    }
-    100%{
-        opacity:0;
-        visibility:hidden;
-    }
-}
+/* optional fade (handled by JS now, not CSS) */

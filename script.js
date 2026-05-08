@@ -60,3 +60,16 @@ function typeWriter(){
 }
 
 typeWriter();
+window.addEventListener("load", ()=>{
+
+    setTimeout(()=>{
+
+        document.getElementById("netflixIntro")
+        .style.display = "none";
+
+        document.getElementById("mainContent")
+        .style.display = "block";
+
+    },4000);
+
+});

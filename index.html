@@ -5,7 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Crave 💜</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- 🔴 CRITICAL FIX: prevents white flash -->
+    <style>
+        html, body {
+            background: #2b1055;
+            margin: 0;
+            padding: 0;
+        }
+
+        #mainContent {
+            opacity: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -92,7 +106,7 @@
 
     </section>
 
-    <!-- VIDEO SECTION (NOW INSIDE MAIN CONTENT) -->
+    <!-- VIDEO SECTION -->
     <section class="video-section">
 
         <div class="video-card">
@@ -132,8 +146,9 @@
 
     </section>
 
-</div> <!-- ✅ CLOSE MAIN CONTENT PROPERLY -->
+</div>
 
+<!-- SCRIPT -->
 <script src="script.js"></script>
 
 </body>

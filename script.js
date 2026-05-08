@@ -46,24 +46,23 @@ window.addEventListener("load", ()=>{
     const intro = document.getElementById("netflixIntro");
     const main = document.getElementById("mainContent");
 
-    // ensure main is ready but hidden via opacity
-    main.style.display = "block";
+    // ensure main is ready but invisible
     main.style.opacity = "0";
 
     setTimeout(()=>{
 
-        // fade out intro
+        // fade intro out
         intro.style.opacity = "0";
         intro.style.transition = "opacity 0.8s ease";
 
-        // fade in main content
-        main.style.transition = "opacity 0.8s ease";
+        // show main properly
         main.style.opacity = "1";
 
-        // remove intro after fade
+        main.style.transition = "opacity 0.8s ease";
+
         setTimeout(()=>{
             intro.style.display = "none";
-        },900);
+        },800);
 
     },3000);
 

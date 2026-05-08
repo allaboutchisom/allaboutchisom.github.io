@@ -16,9 +16,9 @@ body{
 
 /* 🔴 CRITICAL FIX: hide main content before JS shows it */
 #mainContent{
-    display:none;
+    opacity:0;
+    transition:opacity 0.8s ease;
 }
-
 /* HERO */
 .hero{
     padding:100px 20px;

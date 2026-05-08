@@ -152,18 +152,28 @@ video{
 /* GLOW TEXT */
 .glow-text{
     margin-top:25px;
-    font-size:1.3rem;
+    font-size:1.6rem;
     text-align:center;
+    font-weight:bold;
     color:#fff;
-    animation: glow 2s infinite alternate;
+    animation: glow 1.5s infinite alternate;
+}
+
+.glow-text b{
+    color:#ffffff;
+    text-shadow:
+        0 0 5px #b57aff,
+        0 0 10px #b57aff,
+        0 0 20px #b57aff,
+        0 0 40px #d6a4ff;
 }
 
 @keyframes glow{
     from{
-        text-shadow: 0 0 5px #b57aff, 0 0 10px #b57aff, 0 0 20px #b57aff;
+        transform: scale(1);
     }
     to{
-        text-shadow: 0 0 10px #ffffff, 0 0 20px #d6a4ff, 0 0 30px #b57aff;
+        transform: scale(1.05);
     }
 }
 

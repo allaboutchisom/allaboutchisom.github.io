@@ -40,17 +40,31 @@ function createHeart(){
 
 setInterval(createHeart,300);
 
-/* NETFLIX INTRO FIX (CLEAN VERSION) */
+/* NETFLIX INTRO FIX (SMOOTH VERSION - NO FLASH) */
 window.addEventListener("load", ()=>{
 
     const intro = document.getElementById("netflixIntro");
     const main = document.getElementById("mainContent");
 
+    // ensure main is ready but hidden via opacity
+    main.style.display = "block";
+    main.style.opacity = "0";
+
     setTimeout(()=>{
 
-        if(intro) intro.style.display = "none";
-        if(main) main.style.display = "block";
+        // fade out intro
+        intro.style.opacity = "0";
+        intro.style.transition = "opacity 0.8s ease";
 
-    },4000);
+        // fade in main content
+        main.style.transition = "opacity 0.8s ease";
+        main.style.opacity = "1";
+
+        // remove intro after fade
+        setTimeout(()=>{
+            intro.style.display = "none";
+        },900);
+
+    },3000);
 
 });

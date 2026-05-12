@@ -67,3 +67,14 @@ window.addEventListener("load", ()=>{
     },3000);
 
 });
+function openSong(){
+
+    const song = document.getElementById("songPlayer");
+
+    if(song.style.display === "block"){
+        song.style.display = "none";
+    }else{
+        song.style.display = "block";
+    }
+
+}

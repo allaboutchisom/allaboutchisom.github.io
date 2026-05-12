@@ -2,73 +2,46 @@ function showMessage(){
     document.getElementById("secretMessage").classList.toggle("hidden");
 }
 
-/* COUNTDOWN */
-const birthday = new Date("May 20, 2026 00:00:00").getTime();
-
-setInterval(function(){
-
-    const now = new Date().getTime();
-    const distance = birthday - now;
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("countdown").innerHTML =
-    days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-},1000);
-
 /* HEARTS */
 function createHeart(){
-
     const heart = document.createElement("div");
-    heart.classList.add("heart");
     heart.innerHTML = "💜";
-
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = Math.random() * 3 + 2 + "s";
-    heart.style.fontSize = Math.random() * 20 + 20 + "px";
-
+    heart.style.position = "fixed";
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.top = "-20px";
+    heart.style.fontSize = "20px";
+    heart.style.animation = "fall 5s linear";
     document.body.appendChild(heart);
 
-    setTimeout(()=>{
-        heart.remove();
-    },5000);
+    setTimeout(()=>heart.remove(),5000);
 }
 
-setInterval(createHeart,300);
+setInterval(createHeart,400);
 
-/* NETFLIX INTRO FIX (SMOOTH VERSION - NO FLASH) */
+/* INTRO CONTROL (MAIN FIX) */
 window.addEventListener("DOMContentLoaded", ()=>{
 
     const intro = document.getElementById("netflixIntro");
     const main = document.getElementById("mainContent");
 
-    if(!intro || !main) return;
-
     setTimeout(()=>{
 
         intro.style.opacity = "0";
-        intro.style.transition = "opacity 0.8s ease";
 
         setTimeout(()=>{
 
             intro.style.display = "none";
-            main.style.display = "block";
+
             main.style.opacity = "1";
 
-        },800);
+        },1000);
 
-    },3000);
+    },2500);
 
 });
+
+/* SONG TOGGLE */
 function openSong(){
-
     const song = document.getElementById("songPlayer");
-
-    song.style.display =
-        (song.style.display === "block") ? "none" : "block";
-
+    song.style.display = (song.style.display === "block") ? "none" : "block";
 }

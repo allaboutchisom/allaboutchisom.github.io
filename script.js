@@ -46,22 +46,25 @@ window.addEventListener("load", ()=>{
     const intro = document.getElementById("netflixIntro");
     const main = document.getElementById("mainContent");
 
-    // ensure main is ready but invisible
+    // 🔴 FORCE MAIN TO EXIST IN LAYOUT
+    main.style.display = "block";
     main.style.opacity = "0";
 
     setTimeout(()=>{
 
-        // fade intro out
-        intro.style.opacity = "0";
+        // fade out intro
         intro.style.transition = "opacity 0.8s ease";
-
-        // show main properly
-        main.style.opacity = "1";
-
-        main.style.transition = "opacity 0.8s ease";
+        intro.style.opacity = "0";
 
         setTimeout(()=>{
+
+            // remove intro completely
             intro.style.display = "none";
+
+            // show main properly (IMPORTANT FIX)
+            main.style.transition = "opacity 1s ease";
+            main.style.opacity = "1";
+
         },800);
 
     },3000);
@@ -71,10 +74,7 @@ function openSong(){
 
     const song = document.getElementById("songPlayer");
 
-    if(song.style.display === "block"){
-        song.style.display = "none";
-    }else{
-        song.style.display = "block";
-    }
+    song.style.display =
+        (song.style.display === "block") ? "none" : "block";
 
 }

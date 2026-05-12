@@ -1,47 +1,37 @@
-function showMessage(){
-    document.getElementById("secretMessage").classList.toggle("hidden");
-}
-
-/* HEARTS */
-function createHeart(){
-    const heart = document.createElement("div");
-    heart.innerHTML = "💜";
-    heart.style.position = "fixed";
-    heart.style.left = Math.random()*100 + "vw";
-    heart.style.top = "-20px";
-    heart.style.fontSize = "20px";
-    heart.style.animation = "fall 5s linear";
-    document.body.appendChild(heart);
-
-    setTimeout(()=>heart.remove(),5000);
-}
-
-setInterval(createHeart,400);
-
-/* INTRO CONTROL (MAIN FIX) */
-window.addEventListener("DOMContentLoaded", ()=>{
+window.addEventListener("load", ()=>{
 
     const intro = document.getElementById("netflixIntro");
     const main = document.getElementById("mainContent");
 
+    // ensure main is ready but invisible
+    main.style.opacity = "0";
+
     setTimeout(()=>{
 
+        // fade intro out
         intro.style.opacity = "0";
+        intro.style.transition = "opacity 0.8s ease";
+
+        // show main properly
+        main.style.opacity = "1";
+
+        main.style.transition = "opacity 0.8s ease";
 
         setTimeout(()=>{
-
             intro.style.display = "none";
+        },800);
 
-            main.style.opacity = "1";
-
-        },1000);
-
-    },2500);
+    },3000);
 
 });
-
-/* SONG TOGGLE */
 function openSong(){
+
     const song = document.getElementById("songPlayer");
-    song.style.display = (song.style.display === "block") ? "none" : "block";
+
+    if(song.style.display === "block"){
+        song.style.display = "none";
+    }else{
+        song.style.display = "block";
+    }
+
 }

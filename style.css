@@ -14,11 +14,13 @@ body{
     text-align:center;
 }
 
-/* 🔴 CRITICAL FIX: hide main content before JS shows it */
+/* 🔥 MAIN CONTENT HIDDEN INITIALLY */
 #mainContent{
     opacity:0;
-    transition:opacity 0.8s ease;
+    display:block;
+    transition:opacity 1s ease;
 }
+
 /* HERO */
 .hero{
     padding:100px 20px;
@@ -61,12 +63,6 @@ button{
     display:none;
 }
 
-/* SECRET MESSAGE */
-#secretMessage{
-    margin-top:20px;
-    font-size:1.1rem;
-}
-
 /* GALLERY */
 .gallery{
     padding:80px 20px;
@@ -90,10 +86,6 @@ button{
     border-radius:20px;
 }
 
-.photo-card p{
-    margin-top:10px;
-}
-
 /* VIDEO */
 .video-section{
     padding:80px 20px;
@@ -105,76 +97,36 @@ video{
     border-radius:20px;
 }
 
-/* HEARTS */
-.heart{
-    position:fixed;
-    top:-10px;
-    color:#ffccff;
-    animation:fall linear forwards;
+/* HEART */
+.big-heart{
+    font-size:6rem;
+    margin:40px 0;
+    animation:pulse 1.5s infinite;
 }
 
-@keyframes fall{
-    to{
-        transform:translateY(110vh);
-    }
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+    100%{transform:scale(1);}
 }
 
-/* BIRTHDAY MESSAGE */
-.birthday-message{
-    margin-top:30px;
-    padding:20px;
-    background:rgba(255,255,255,0.1);
-    border-radius:20px;
-    max-width:700px;
-    line-height:1.8;
-    margin-left:auto;
-    margin-right:auto;
+/* SONG */
+.special-song{
+    margin-top:60px;
 }
 
-.birthday-message h2{
-    margin-bottom:10px;
-}
-
-/* TYPING TEXT */
-.typing-text{
-    font-size:1.3rem;
-    margin-top:25px;
+.music-btn{
+    padding:18px 30px;
+    border:none;
+    border-radius:40px;
+    background:#b57aff;
     color:white;
-    font-weight:bold;
-    border-right:2px solid white;
-    width:fit-content;
-    margin-left:auto;
-    margin-right:auto;
-    white-space:nowrap;
-    overflow:hidden;
+    cursor:pointer;
 }
 
-/* GLOW TEXT */
-.glow-text{
-    margin-top:25px;
-    font-size:1.6rem;
-    text-align:center;
-    font-weight:bold;
-    color:#fff;
-    animation: glow 1.5s infinite alternate;
-}
-
-.glow-text b{
-    color:#ffffff;
-    text-shadow:
-        0 0 5px #b57aff,
-        0 0 10px #b57aff,
-        0 0 20px #b57aff,
-        0 0 40px #d6a4ff;
-}
-
-@keyframes glow{
-    from{
-        transform: scale(1);
-    }
-    to{
-        transform: scale(1.05);
-    }
+.hidden-song{
+    display:none;
+    margin-top:20px;
 }
 
 /* NETFLIX INTRO */
@@ -187,91 +139,25 @@ video{
     justify-content:center;
     align-items:center;
     z-index:99999;
+    opacity:1;
+    transition:opacity 1s ease;
 }
 
 .netflix-text{
     color:#c084fc;
-    font-size:4rem;
-    font-weight:700;
-    letter-spacing:8px;
-    opacity:0;
-    animation:zoomText 3s forwards;
-    text-shadow:0 0 20px #c084fc;
+    font-size:3rem;
+    letter-spacing:5px;
+    animation:zoom 2.5s ease;
 }
 
-/* ANIMATIONS */
-@keyframes zoomText{
-    0%{
-        transform:scale(0.5);
-        opacity:0;
-    }
-    50%{
-        opacity:1;
-    }
-    100%{
-        transform:scale(1.1);
-        opacity:1;
-    }
-}
-.big-heart{
-    font-size:6rem;
-    text-align:center;
-    margin:60px 0 20px;
-    animation:pulseHeart 1.5s infinite ease-in-out;
-    color:#d6a4ff;
-    text-shadow:
-        0 0 10px #b57aff,
-        0 0 20px #b57aff,
-        0 0 40px #b57aff;
+@keyframes zoom{
+    from{transform:scale(0.5);opacity:0;}
+    to{transform:scale(1.1);opacity:1;}
 }
 
-/* heartbeat animation */
-@keyframes pulseHeart{
-    0%{
-        transform:scale(1);
-    }
-    50%{
-        transform:scale(1.2);
-    }
-    100%{
-        transform:scale(1);
-    }
-}
-/* SPECIAL SONG SECTION */
-
-.special-song{
-    margin-top:80px;
-    text-align:center;
-}
-
-.music-btn{
-    padding:18px 30px;
-    border:none;
-    border-radius:40px;
-    background:#b57aff;
+/* GLASS TEXT */
+.glow-text b{
+    font-size:1.8rem;
     color:white;
-    font-size:1rem;
-    cursor:pointer;
-    box-shadow:0 0 20px #b57aff;
-    transition:0.3s;
+    text-shadow:0 0 10px #b57aff,0 0 20px #b57aff;
 }
-
-.music-btn:hover{
-    transform:scale(1.05);
-}
-
-.hidden-song{
-    display:none;
-    margin-top:30px;
-}
-
-.song-text{
-    margin-bottom:20px;
-    font-size:1.1rem;
-}
-
-audio{
-    width:80%;
-    max-width:500px;
-}
-/* optional fade (handled by JS now, not CSS) */

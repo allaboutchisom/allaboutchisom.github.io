@@ -237,5 +237,41 @@ video{
         transform:scale(1);
     }
 }
+/* SPECIAL SONG SECTION */
 
+.special-song{
+    margin-top:80px;
+    text-align:center;
+}
+
+.music-btn{
+    padding:18px 30px;
+    border:none;
+    border-radius:40px;
+    background:#b57aff;
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    box-shadow:0 0 20px #b57aff;
+    transition:0.3s;
+}
+
+.music-btn:hover{
+    transform:scale(1.05);
+}
+
+.hidden-song{
+    display:none;
+    margin-top:30px;
+}
+
+.song-text{
+    margin-bottom:20px;
+    font-size:1.1rem;
+}
+
+audio{
+    width:80%;
+    max-width:500px;
+}
 /* optional fade (handled by JS now, not CSS) */

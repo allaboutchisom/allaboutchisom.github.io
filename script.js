@@ -41,28 +41,22 @@ function createHeart(){
 setInterval(createHeart,300);
 
 /* NETFLIX INTRO FIX (SMOOTH VERSION - NO FLASH) */
-window.addEventListener("load", ()=>{
+window.addEventListener("DOMContentLoaded", ()=>{
 
     const intro = document.getElementById("netflixIntro");
     const main = document.getElementById("mainContent");
 
-    // 🔴 FORCE MAIN TO EXIST IN LAYOUT
-    main.style.display = "block";
-    main.style.opacity = "0";
+    if(!intro || !main) return;
 
     setTimeout(()=>{
 
-        // fade out intro
-        intro.style.transition = "opacity 0.8s ease";
         intro.style.opacity = "0";
+        intro.style.transition = "opacity 0.8s ease";
 
         setTimeout(()=>{
 
-            // remove intro completely
             intro.style.display = "none";
-
-            // show main properly (IMPORTANT FIX)
-            main.style.transition = "opacity 1s ease";
+            main.style.display = "block";
             main.style.opacity = "1";
 
         },800);

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>It's Chisom's Day 💜</title>
+    <title>Chisom's Day 💜</title>
     <link rel="stylesheet" href="style.css">
     <style>
         /* INTRO STYLES */
@@ -129,6 +129,12 @@
             0% { opacity: 0; }
             100% { opacity: 1; }
         }
+
+        #mainSite {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
     </style>
 </head>
 
@@ -150,8 +156,8 @@
         <div class="intro-fadeout"></div>
     </div>
 
-    <!-- YOUR BIRTHDAY SITE -->
-    <div id="mainSite" style="display:none;">
+    <!-- MAIN BIRTHDAY SITE -->
+    <div id="mainSite">
 
         <div class="hearts"></div>
 
@@ -279,4 +285,65 @@
                 <video controls>
                     <source src="videos/video1.mp4" type="video/mp4">
                 </video>
-                <p>Your smile ma
+                <p>Your smile makes everything feel lighter 💜</p>
+            </div>
+
+            <div class="video-card">
+                <video controls>
+                    <source src="videos/video2.mp4" type="video/mp4">
+                </video>
+                <p>Best of the best ✨</p>
+            </div>
+
+            <div class="video-card">
+                <video controls>
+                    <source src="videos/video3.mp4" type="video/mp4">
+                </video>
+                <p>You make happiness look beautiful 💫</p>
+            </div>
+
+            <div class="video-card">
+                <video controls>
+                    <source src="videos/video4.mp4" type="video/mp4">
+                </video>
+                <p>Us in Moments 💜</p>
+            </div>
+
+            <div class="video-card">
+                <video controls>
+                    <source src="videos/video5.mp4" type="video/mp4">
+                </video>
+            </div>
+
+        </section>
+
+        <!-- SPECIAL SONG SECTION -->
+        <section class="special-song">
+
+            <button class="music-btn" onclick="openSong()">
+                🎵 Tap To Open A Special Song For You 💜
+            </button>
+
+            <div id="songPlayer" class="hidden-song">
+                <p class="song-text">
+                    Every lyric here carries a piece of how I feel about you 💜
+                </p>
+                <audio controls>
+                    <source src="music/Tina my Crave.mp3" type="audio/mp3">
+                </audio>
+            </div>
+
+            <div class="glow-text">
+                <b>I LOVE YOU 💜</b>
+            </div>
+
+            <div class="typing-text" id="typeText"></div>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

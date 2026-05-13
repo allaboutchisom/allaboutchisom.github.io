@@ -1,3 +1,7 @@
+html {
+    background: black;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -228,16 +232,21 @@ audio {
     width: 80%;
     max-width: 500px;
 }
+
 /* BEATING HEART */
 .beating-heart-section {
     padding: 60px 20px;
     text-align: center;
 }
 
-.big-heart {
+#mainSite .big-heart {
     font-size: 8rem;
     animation: heartbeat 1.2s ease infinite;
     display: inline-block;
+    position: relative;
+    top: auto;
+    left: auto;
+    opacity: 1;
 }
 
 @keyframes heartbeat {

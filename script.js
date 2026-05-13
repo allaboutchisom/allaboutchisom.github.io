@@ -51,5 +51,5 @@ function createHearts() {
         container.appendChild(heart);
 
         setTimeout(() => heart.remove(), 7000);
-    }, 80);
+    }, 300);
 }

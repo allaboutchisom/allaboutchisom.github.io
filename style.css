@@ -250,12 +250,12 @@ audio {
 }
 
 @keyframes heartbeat {
-    0%   { transform: scale(1); }
-    14%  { transform: scale(1.2); }
-    28%  { transform: scale(1); }
-    42%  { transform: scale(1.2); }
-    70%  { transform: scale(1); }
-    100% { transform: scale(1); }
+    0%   { transform: scale(1); filter: drop-shadow(0 0 5px #b57aff); }
+    14%  { transform: scale(1.2); filter: drop-shadow(0 0 20px #b57aff) drop-shadow(0 0 40px #d6a4ff); }
+    28%  { transform: scale(1); filter: drop-shadow(0 0 5px #b57aff); }
+    42%  { transform: scale(1.2); filter: drop-shadow(0 0 20px #b57aff) drop-shadow(0 0 40px #d6a4ff); }
+    70%  { transform: scale(1); filter: drop-shadow(0 0 5px #b57aff); }
+    100% { transform: scale(1); filter: drop-shadow(0 0 5px #b57aff); }
 }
 
 .heart-caption {

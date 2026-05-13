@@ -160,7 +160,7 @@ video {
 }
 
 /* TYPING TEXT */
-.typing-text {
+#mainSite .typing-text {
     font-size: 1.3rem;
     margin-top: 25px;
     color: white;

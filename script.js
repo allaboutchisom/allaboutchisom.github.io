@@ -20,6 +20,7 @@ function createHearts() {
         heart.style.fontSize = (Math.random() * 0.4 + 0.6) + 'rem';
         heart.style.animationDuration = (Math.random() * 1.5 + 1) + 's';
         heart.style.animationDelay = '0s';
+        heart.style.top = '-30px';
 
         container.appendChild(heart);
 

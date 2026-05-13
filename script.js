@@ -1,25 +1,25 @@
 // INTRO
-setTimeout(() => {
-    const intro = document.getElementById('intro');
-    const mainSite = document.getElementById('mainSite');
-
-    intro.style.transition = 'opacity 0.5s ease';
-    intro.style.opacity = '0';
-
+window.onload = function() {
     setTimeout(() => {
-        intro.style.display = 'none';
-        mainSite.style.display = 'block';
-        mainSite.style.opacity = '0';
-        mainSite.style.transition = 'opacity 0.8s ease';
+        const intro = document.getElementById('intro');
+        const mainSite = document.getElementById('mainSite');
+
+        intro.style.transition = 'opacity 0.8s ease';
+        intro.style.opacity = '0';
 
         setTimeout(() => {
-            mainSite.style.opacity = '1';
-            createHearts();
-        }, 100);
+            intro.style.display = 'none';
+            mainSite.style.display = 'block';
 
-    }, 500);
+            setTimeout(() => {
+                mainSite.style.opacity = '1';
+                createHearts();
+            }, 50);
 
-}, 4300);
+        }, 800);
+
+    }, 4300);
+};
 
 // SHOW SECRET MESSAGE
 function showMessage() {

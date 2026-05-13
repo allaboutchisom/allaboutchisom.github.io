@@ -65,4 +65,166 @@ button {
     margin-top: 30px;
     padding: 20px;
     background: rgba(255, 255, 255, 0.1);
-    border-radius
+    border-radius: 20px;
+    max-width: 700px;
+    line-height: 1.8;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.birthday-message h2 {
+    margin-bottom: 10px;
+}
+
+/* GALLERY */
+.gallery {
+    padding: 80px 20px;
+}
+
+.photos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.photo-card {
+    width: 250px;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.photo-card p {
+    margin-top: 10px;
+}
+
+/* VIDEO SECTION */
+.video-section {
+    padding: 80px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.video-card {
+    width: 80%;
+    max-width: 500px;
+}
+
+.video-card p {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+video {
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* FALLING HEARTS */
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.heart {
+    position: absolute;
+    top: -60px;
+    font-size: 0.9rem;
+    animation: fall linear forwards;
+    opacity: 0.7;
+    user-select: none;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(110vh) rotate(0deg);
+        opacity: 0.2;
+    }
+}
+
+/* TYPING TEXT */
+.typing-text {
+    font-size: 1.3rem;
+    margin-top: 25px;
+    color: white;
+    font-weight: bold;
+    border-right: 2px solid white;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* GLOW TEXT */
+.glow-text {
+    margin-top: 25px;
+    font-size: 1.3rem;
+    text-align: center;
+    color: #fff;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #b57aff, 0 0 10px #b57aff, 0 0 20px #b57aff;
+    }
+    to {
+        text-shadow: 0 0 10px #ffffff, 0 0 20px #d6a4ff, 0 0 30px #b57aff;
+    }
+}
+
+/* SPECIAL SONG SECTION */
+.special-song {
+    margin-top: 80px;
+    padding-bottom: 80px;
+    text-align: center;
+}
+
+.music-btn {
+    padding: 18px 30px;
+    border: none;
+    border-radius: 40px;
+    background: #b57aff;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0 20px #b57aff;
+    transition: 0.3s;
+}
+
+.music-btn:hover {
+    transform: scale(1.05);
+}
+
+.hidden-song {
+    display: none;
+    margin-top: 30px;
+}
+
+.song-text {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+audio {
+    width: 80%;
+    max-width: 500px;
+}

@@ -17,14 +17,14 @@ function createHearts() {
         heart.textContent = '💜';
 
         heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.fontSize = (Math.random() * 1.2 + 0.8) + 'rem';
-        heart.style.animationDuration = (Math.random() * 4 + 4) + 's';
-        heart.style.animationDelay = (Math.random() * 2) + 's';
+        heart.style.fontSize = (Math.random() * 0.4 + 0.6) + 'rem';
+        heart.style.animationDuration = (Math.random() * 1.5 + 1) + 's';
+        heart.style.animationDelay = '0s';
 
         container.appendChild(heart);
 
-        setTimeout(() => heart.remove(), 8000);
-    }, 300);
+        setTimeout(() => heart.remove(), 2500);
+    }, 80);
 }
 
 createHearts();

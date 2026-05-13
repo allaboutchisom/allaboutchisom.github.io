@@ -228,3 +228,30 @@ audio {
     width: 80%;
     max-width: 500px;
 }
+/* BEATING HEART */
+.beating-heart-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.big-heart {
+    font-size: 8rem;
+    animation: heartbeat 1.2s ease infinite;
+    display: inline-block;
+}
+
+@keyframes heartbeat {
+    0%   { transform: scale(1); }
+    14%  { transform: scale(1.2); }
+    28%  { transform: scale(1); }
+    42%  { transform: scale(1.2); }
+    70%  { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+.heart-caption {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #d6a4ff;
+    letter-spacing: 2px;
+}

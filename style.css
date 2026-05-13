@@ -1,4 +1,3 @@
-/* RESET */
 *{
     margin:0;
     padding:0;
@@ -6,7 +5,6 @@
     font-family:Arial, sans-serif;
 }
 
-/* BODY */
 body{
     background:linear-gradient(to bottom,#2b1055,#7597de);
     color:white;
@@ -14,14 +12,6 @@ body{
     text-align:center;
 }
 
-/* 🔥 MAIN CONTENT HIDDEN INITIALLY */
-#mainContent{
-    opacity:0;
-    display:block;
-    transition:opacity 1s ease;
-}
-
-/* HERO */
 .hero{
     padding:100px 20px;
 }
@@ -36,7 +26,6 @@ body{
     font-weight:300;
 }
 
-/* LOVE LETTER */
 .love-letter{
     max-width:800px;
     margin:auto;
@@ -46,7 +35,11 @@ body{
     border-radius:20px;
 }
 
-/* BUTTON */
+#countdown{
+    font-size:2rem;
+    margin-top:30px;
+}
+
 button{
     margin-top:30px;
     padding:15px 30px;
@@ -58,12 +51,15 @@ button{
     font-size:1rem;
 }
 
-/* HIDDEN */
 .hidden{
     display:none;
 }
 
-/* GALLERY */
+#secretMessage{
+    margin-top:20px;
+    font-size:1.1rem;
+}
+
 .gallery{
     padding:80px 20px;
 }
@@ -86,7 +82,10 @@ button{
     border-radius:20px;
 }
 
-/* VIDEO */
+.photo-card p{
+    margin-top:10px;
+}
+
 .video-section{
     padding:80px 20px;
 }
@@ -97,22 +96,62 @@ video{
     border-radius:20px;
 }
 
-/* HEART */
-.big-heart{
-    font-size:6rem;
-    margin:40px 0;
-    animation:pulse 1.5s infinite;
+.heart{
+    position:fixed;
+    top:-10px;
+    color:#ffccff;
+    animation:fall linear forwards;
 }
 
-@keyframes pulse{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.2);}
-    100%{transform:scale(1);}
+@keyframes fall{
+    to{
+        transform:translateY(110vh);
+    }
+}.birthday-message{
+    margin-top:30px;
+    padding:20px;
+    background:rgba(255,255,255,0.1);
+    border-radius:20px;
+    max-width:700px;
+    line-height:1.8;
+    margin-left:auto;
+    margin-right:auto;
 }
 
-/* SONG */
+.birthday-message h2{
+    margin-bottom:10px;
+}.typing-text{
+    font-size:1.3rem;
+    margin-top:25px;
+    color:white;
+    font-weight:bold;
+    border-right:2px solid white;
+    width:fit-content;
+    margin-left:auto;
+    margin-right:auto;
+    white-space:nowrap;
+    overflow:hidden;
+}.glow-text{
+    margin-top:25px;
+    font-size:1.3rem;
+    text-align:center;
+    color:#fff;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        text-shadow: 0 0 5px #b57aff, 0 0 10px #b57aff, 0 0 20px #b57aff;
+    }
+    to{
+        text-shadow: 0 0 10px #ffffff, 0 0 20px #d6a4ff, 0 0 30px #b57aff;
+    }
+}
+/* SPECIAL SONG SECTION */
+
 .special-song{
-    margin-top:60px;
+    margin-top:80px;
+    text-align:center;
 }
 
 .music-btn{
@@ -121,43 +160,27 @@ video{
     border-radius:40px;
     background:#b57aff;
     color:white;
+    font-size:1rem;
     cursor:pointer;
+    box-shadow:0 0 20px #b57aff;
+    transition:0.3s;
+}
+
+.music-btn:hover{
+    transform:scale(1.05);
 }
 
 .hidden-song{
     display:none;
-    margin-top:20px;
+    margin-top:30px;
 }
 
-/* NETFLIX INTRO */
-#netflixIntro{
-    position:fixed;
-    width:100%;
-    height:100vh;
-    background:black;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:99999;
-    opacity:1;
-    transition:opacity 1s ease;
+.song-text{
+    margin-bottom:20px;
+    font-size:1.1rem;
 }
 
-.netflix-text{
-    color:#c084fc;
-    font-size:3rem;
-    letter-spacing:5px;
-    animation:zoom 2.5s ease;
-}
-
-@keyframes zoom{
-    from{transform:scale(0.5);opacity:0;}
-    to{transform:scale(1.1);opacity:1;}
-}
-
-/* GLASS TEXT */
-.glow-text b{
-    font-size:1.8rem;
-    color:white;
-    text-shadow:0 0 10px #b57aff,0 0 20px #b57aff;
+audio{
+    width:80%;
+    max-width:500px;
 }
